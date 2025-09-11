@@ -9,9 +9,9 @@ Route::get('/', function () {
 
 Route::prefix('products')->controller(ProductController::class)->group(function () {
 
-    Route::get('/');
+    Route::get('/', 'index');
 
-    Route::get('/create');
+    Route::get('/create', 'create');
 
-    Route::get('/{id}/{category?}');
+    Route::get('/{id}/{category?}', 'show');
 });

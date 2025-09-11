@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-abstract class ProductController extends Controller
+class ProductController extends Controller
 {
     function index()
     {
@@ -18,11 +18,6 @@ abstract class ProductController extends Controller
 
     function show($id, $category = null)
     {
-
-        if ($category != null) {
-            return "Detalle de cada producto: " . $id;
-        } else {
-            return "Detalle de cada producto " . $id . " de la categoria: " . $category;
-        }
+        return view('products.show');
     }
 }
