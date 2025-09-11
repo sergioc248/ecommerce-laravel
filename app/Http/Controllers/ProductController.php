@@ -8,12 +8,12 @@ abstract class ProductController extends Controller
 {
     function index()
     {
-        return 'LISTADO DE PRODUCTOS';
+        return view('products.index');
     }
 
     function create()
     {
-        return "FORMULARIO DE CREACION DE PRODUCTOS";
+        return view('products.create');
     }
 
     function show($id, $category = null)
