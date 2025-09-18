@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<style>
+    <style>
         body {
             font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
             background: #f5f7fa;
@@ -126,7 +126,7 @@
                 <div class="product-desc">Experience the next generation of mobile technology with Smartphone X.
                     High-resolution camera, ultra-fast processor, and sleek design.</div>
                 <div class="product-price">$799</div>
-                <button class="btn">View Details</button>
+                <a href="/products/show" class="btn" style="display:inline-block;text-decoration:none;">View Details</a>
             </div>
             <!-- Product Card 2 -->
             <div class="product-card">
@@ -135,7 +135,7 @@
                 <div class="product-desc">Laptop Pro delivers professional performance in a lightweight body. 16GB RAM,
                     512GB SSD, and a vibrant display for work and play.</div>
                 <div class="product-price">$1199</div>
-                <button class="btn">View Details</button>
+                <a href="/products/show" class="btn" style="display:inline-block;text-decoration:none;">View Details</a>
             </div>
             <!-- Product Card 3 -->
             <div class="product-card">
@@ -144,7 +144,7 @@
                 <div class="product-desc">Immerse yourself in music with noise-cancelling wireless headphones. 30-hour
                     battery life and premium sound quality.</div>
                 <div class="product-price">$199</div>
-                <button class="btn">View Details</button>
+                <a href="/products/show" class="btn" style="display:inline-block;text-decoration:none;">View Details</a>
             </div>
             <!-- Product Card 4 -->
             <div class="product-card">
@@ -153,7 +153,7 @@
                 <div class="product-desc">Stay connected and track your fitness with Smartwatch Z. Water resistant,
                     notifications, and stylish design.</div>
                 <div class="product-price">$249</div>
-                <button class="btn">View Details</button>
+                <a href="/products/show" class="btn" style="display:inline-block;text-decoration:none;">View Details</a>
             </div>
             <!-- Add more product cards as needed -->
         </div>

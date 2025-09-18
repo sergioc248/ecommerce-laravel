@@ -214,6 +214,9 @@
                 <button class="btn-buy">Add to Cart</button>
                 <span class="stock">In Stock</span>
             </div>
+            <div style="margin-top:18px">
+                <a href="/products" style="text-decoration:none;color:#1976d2;font-weight:600">← Back to Products</a>
+            </div>
         </div>
     </div>
 @endsection
