@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technology Products | E-Shop</title>
-    <style>
+@section('css')
+<style>
         body {
             font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
             background: #f5f7fa;
@@ -117,12 +113,9 @@
             box-shadow: 0 2px 8px rgba(26, 34, 54, 0.13);
         }
     </style>
-</head>
+@endsection
 
-<body>
-    <div class="navbar">
-        E-Shop | Technology Category
-    </div>
+@section('content')
     <div class="container">
         <h1>Technology Products</h1>
         <div class="products-grid">
@@ -165,6 +158,4 @@
             <!-- Add more product cards as needed -->
         </div>
     </div>
-</body>
-
-</html>
+@endsection

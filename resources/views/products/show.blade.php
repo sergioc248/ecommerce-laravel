@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartphone X | E-Shop</title>
+@section('css')
     <style>
         body {
             font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
@@ -181,12 +177,9 @@
             }
         }
     </style>
-</head>
+@endsection
 
-<body>
-    <div class="navbar">
-        E-Shop | Product Details
-    </div>
+@section('content')
     <div class="container">
         <div class="product-image-section">
             <div class="product-image">📱</div>
@@ -223,6 +216,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+@endsection

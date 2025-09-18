@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product | E-Shop</title>
-    <style>
+@section('css')
+<style>
         body {
             font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
             background: linear-gradient(135deg, #b7aaff 0%, #e0c3fc 100%);
@@ -130,13 +126,10 @@
             background: #ede9fe;
         }
     </style>
-</head>
+@endsection
 
-<body>
-    <div class="navbar">
-        E-Shop | Add Product
-    </div>
-    <div class="container">
+@section('content')
+        <div class="container">
         <h1>Add a New Product</h1>
         <form action="" method="POST" enctype="multipart/form-data">
             <!-- Device selection removed -->
@@ -160,6 +153,4 @@
             <button type="submit" class="btn-submit">Add Product</button>
         </form>
     </div>
-</body>
-
-</html>
+@endsection
