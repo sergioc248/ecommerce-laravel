@@ -22,8 +22,8 @@ class ProductFactory extends Factory
             'name' => fake()->name(),
             'price' => fake()->randomFloat(2, 100, 1000000),
             'description' => fake()->paragraph(),
-            'category_id' => Category::inRandomOrder()->first()->id(),
-            'brand_id' => Brand::inRandomOrder()->first()->id(),
+            'category_id' => Category::inRandomOrder()->first()->id,
+            'brand_id' => Brand::inRandomOrder()->first()->id,
             'created_at' => now(),
             'updated_at' => now(),
         ];
