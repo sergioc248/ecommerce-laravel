@@ -10,8 +10,6 @@ Route::prefix('products')->controller(ProductController::class)->group(function 
 
     Route::get('', 'index');
 
-    Route::get('/create', 'create');
-
     Route::get('/{id}/{category?}', 'show');
 });
 
@@ -28,5 +26,9 @@ Route::prefix('admin')->group(function () {
     );
     Route::post('/categories/store', [CategoryController::class, 'store'])->name(
         'admin.categories.store'
+    );
+
+    Route::get('/products/create', [ProductController::class, 'create'])->name(
+        'admin.products.create'
     );
 });

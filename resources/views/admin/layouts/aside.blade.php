@@ -21,9 +21,9 @@
                   </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-dark" href="../pages/virtual-reality.html}}" href="../pages/tables.html">
+                  <a class="nav-link {{ Request::is('admin/products/create') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ url('admin/products/create') }}">
                       <i class="material-symbols-rounded opacity-5">table_view</i>
-                      <span class="nav-link-text ms-1">products</span>
+                      <span class="nav-link-text ms-1">Products</span>
                   </a>
               </li>
               <li class="nav-item">
@@ -34,7 +34,7 @@
                   </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-dark" href="../pages/virtual-reality.html">
+                  <a class="nav-link {{ Request::is('admin/brands*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ url('admin/brands') }}">
                       <i class="material-symbols-rounded opacity-5">view_in_ar</i>
                       <span class="nav-link-text ms-1">Brands</span>
                   </a>
