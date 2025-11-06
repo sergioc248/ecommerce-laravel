@@ -58,8 +58,11 @@
                                         <span class="input-group-text"><i
                                                 class="material-symbols-rounded">shopping_bag</i></span>
                                         <input type="text" class="form-control" name="name" id="name"
-                                            placeholder="Enter product name" required>
+                                            placeholder="Enter product name">
                                     </div>
+                                    @error('name')
+                                        <div class="text-danger mt-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -69,9 +72,11 @@
                                     <div class="input-group">
                                         <span class="input-group-text"><i
                                                 class="material-symbols-rounded">description</i></span>
-                                        <textarea class="form-control" name="description" id="description" rows="4" placeholder="Describe the product"
-                                            required></textarea>
+                                        <textarea class="form-control" name="description" id="description" rows="4" placeholder="Describe the product"></textarea>
                                     </div>
+                                    @error('description')
+                                        <div class="text-danger mt-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -87,6 +92,9 @@
                                         <input type="number" class="form-control" name="price" id="price"
                                             min="0" step="0.01" placeholder="0.00" required>
                                     </div>
+                                    @error('price')
+                                        <div class="text-danger mt-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -107,6 +115,9 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    @error('category')
+                                        <div class="text-danger mt-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -124,6 +135,9 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    @error('brand')
+                                        <div class="text-danger mt-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
 
