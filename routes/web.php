@@ -1,10 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
 
 Route::prefix('products')->controller(ProductController::class)->group(function () {
 
@@ -30,5 +30,8 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/products/create', [ProductController::class, 'create'])->name(
         'admin.products.create'
+    );
+    Route::post('/products/store', [ProductController::class, 'store'])->name(
+        'admin.products.store'
     );
 });

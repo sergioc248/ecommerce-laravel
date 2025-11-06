@@ -44,7 +44,7 @@
                         }
                     </style>
 
-                    <form class="product-create" action="{{ route('admin.products.create') }}" method="POST"
+                    <form class="product-create" action="{{ route('admin.products.store') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         <div class="row">
@@ -101,14 +101,10 @@
                                         <span class="input-group-text"><i
                                                 class="material-symbols-rounded">category</i></span>
                                         <select class="form-select" name="category" id="category">
-
+                                            <option selected disabled>Select a category</option>
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
-                                            <option value="">Select a category</option>
-                                            <option value="technology">Technology</option>
-                                            <option value="accessories">Accessories</option>
-                                            <option value="wearables">Wearables</option>
                                         </select>
                                     </div>
                                 </div>
@@ -121,15 +117,11 @@
                                     <div class="input-group">
                                         <span class="input-group-text"><i
                                                 class="material-symbols-rounded">brand_awareness</i></span>
-                                        <select class="form-select" name="category" id="brand">
-
+                                        <select class="form-select" name="brand" id="brand">
+                                            <option selected disabled>Select a brand</option>
                                             @foreach ($brands as $brand)
                                                 <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                                             @endforeach
-                                            <option value="">Select a category</option>
-                                            <option value="technology">Technology</option>
-                                            <option value="accessories">Accessories</option>
-                                            <option value="wearables">Wearables</option>
                                         </select>
                                     </div>
                                 </div>
