@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('products')->controller(ProductController::class)->group(function () {
 
-    Route::get('', 'index');
+    Route::get('', 'index')->name('products.index');
 
-    Route::get('/{id}/{category?}', 'show');
+    Route::get('/{id}/{category?}', 'show')->name('products.show');
 });
 
 Auth::routes();
