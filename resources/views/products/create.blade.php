@@ -9,6 +9,13 @@
                     <a href="{{ route('admin.index') }}" class="btn btn-sm bg-gradient-dark">Back to Dashboard</a>
                 </div>
                 <div class="card-body">
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Success!</strong> {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+
                     <style>
                         /* Scoped styles to differentiate product create inputs */
                         .product-create .form-control,
@@ -58,7 +65,7 @@
                                         <span class="input-group-text"><i
                                                 class="material-symbols-rounded">shopping_bag</i></span>
                                         <input type="text" class="form-control" name="name" id="name"
-                                            placeholder="Enter product name">
+                                            placeholder="Enter product name" value="{{ old('name') }}">
                                     </div>
                                     @error('name')
                                         <div class="text-danger mt-1">{{ $message }}</div>
@@ -72,7 +79,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text"><i
                                                 class="material-symbols-rounded">description</i></span>
-                                        <textarea class="form-control" name="description" id="description" rows="4" placeholder="Describe the product"></textarea>
+                                        <textarea class="form-control" name="description" id="description" rows="4" placeholder="Describe the product">{{ old('description') }}</textarea>
                                     </div>
                                     @error('description')
                                         <div class="text-danger mt-1">{{ $message }}</div>
@@ -90,7 +97,8 @@
                                         <span class="input-group-text"><i
                                                 class="material-symbols-rounded">payments</i></span>
                                         <input type="number" class="form-control" name="price" id="price"
-                                            min="0" step="0.01" placeholder="0.00" required>
+                                            min="0" step="0.01" placeholder="0.00" value="{{ old('price') }}"
+                                            required>
                                     </div>
                                     @error('price')
                                         <div class="text-danger mt-1">{{ $message }}</div>
@@ -109,9 +117,12 @@
                                         <span class="input-group-text"><i
                                                 class="material-symbols-rounded">category</i></span>
                                         <select class="form-select" name="category" id="category">
-                                            <option selected disabled>Select a category</option>
+                                            <option value="" {{ old('category') ? '' : 'selected disabled' }}>Select a
+                                                category</option>
                                             @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                <option value="{{ $category->id }}"
+                                                    {{ old('category') == $category->id ? 'selected' : '' }}>
+                                                    {{ $category->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -129,9 +140,12 @@
                                         <span class="input-group-text"><i
                                                 class="material-symbols-rounded">brand_awareness</i></span>
                                         <select class="form-select" name="brand" id="brand">
-                                            <option selected disabled>Select a brand</option>
+                                            <option value="" {{ old('brand') ? '' : 'selected disabled' }}>Select a
+                                                brand</option>
                                             @foreach ($brands as $brand)
-                                                <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                                <option value="{{ $brand->id }}"
+                                                    {{ old('brand') == $brand->id ? 'selected' : '' }}>{{ $brand->name }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -151,7 +165,8 @@
                                             <i class="material-symbols-rounded me-1">upload</i>
                                             Choose image
                                         </label>
-                                        <input class="d-none" type="file" name="image" id="image" accept="image/*">
+                                        <input class="d-none" type="file" name="image" id="image"
+                                            accept="image/*">
                                         <span class="text-secondary small" id="image-filename">No file chosen</span>
                                     </div>
                                     <small class="form-text text-muted">Accepted formats: JPG, PNG, GIF. Max size

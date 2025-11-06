@@ -34,8 +34,12 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'price' => 'required|numeric|min:0|max:999999.99',
+            'category' => 'required|exists:category,id',
+            'brand' => 'required|exists:brand,id',
         ]);
-        
+
         $product = new Product;
         $product->name = $request->input('name');
         $product->description = $request->input('description');
@@ -45,6 +49,13 @@ class ProductController extends Controller
 
         $product->save();
 
-        return 'Product created successfully!';
+        return redirect()->route('admin.products.table')->with('success', 'Product created successfully!');
+    }
+
+    public function table()
+    {
+        $products = Product::orderBy('id', 'desc')->paginate(10);
+
+        return view('products.table', ['products' => $products]);
     }
 }

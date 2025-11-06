@@ -21,7 +21,8 @@
                   </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link {{ Request::is('admin/products/create') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ url('admin/products/create') }}">
+                  <a class="nav-link {{ Request::is('admin/products') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
+                      href="{{ route('admin.products.table') }}">
                       <i class="material-symbols-rounded opacity-5">table_view</i>
                       <span class="nav-link-text ms-1">Products</span>
                   </a>
@@ -34,7 +35,8 @@
                   </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link {{ Request::is('admin/brands*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ url('admin/brands') }}">
+                  <a class="nav-link {{ Request::is('admin/brands*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
+                      href="{{ url('admin/brands') }}">
                       <i class="material-symbols-rounded opacity-5">view_in_ar</i>
                       <span class="nav-link-text ms-1">Brands</span>
                   </a>
